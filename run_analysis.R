@@ -1,8 +1,15 @@
 # Getting and cleaning data project ----
-getwd()
-setwd("./UCI HAR Dataset")
 
-# 1.- reading all relevant txt files
+# 1.- download and read all relevant txt files
+fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+if(!file.exists("UCI HAR Dataset.zip")){
+  download.file(fileUrl,destfile = "./UCI HAR Dataset.zip",method = "curl")
+}
+unzip("UCI HAR Dataset.zip")
+
+getwd()
+setwd("./UCI HAR Dataset") # assigning as new wroking directory
+
 activity_labels <- read.table("activity_labels.txt") # to label y values
 features <- read.table("features.txt") # column headers
 subject_test <- read.table("test/subject_test.txt") 
