@@ -1,6 +1,6 @@
 # Getting and cleaning data project ----
 getwd()
-setwd("/UCI HAR Dataset")
+setwd("./UCI HAR Dataset")
 
 # 1.- reading all relevant txt files
 activity_labels <- read.table("activity_labels.txt") # to label y values
@@ -16,12 +16,13 @@ y_train <- read.table("train/y_train.txt")
 x <- rbind(x_train, x_test)
 colnames(x) <- features[,2]
 y <- rbind(y_train, y_test)
-y <- merge(y,activity_labels) # matching label with id
-colnames(y) <- c("subject","activity")
+colnames(y) <- "activity"
 subjects <- rbind(subject_train, subject_test)
 colnames(subjects) <- "subject"
 xys_data <- cbind(subjects, y, x)
-xys_data <- xys_data[,-2] # merged dataset
+xys_data$activity <- factor(xys_data$activity,
+                            labels = activity_labels$V2,
+                            levels = activity_labels$V1) # replacing the id for the label
 
 names(xys_data) # review headers to better adjust names
 
@@ -44,6 +45,7 @@ names(extractData) <- gsub("\\(t","(Time",names(extractData))
 duplicated(names(extractData)) # verify that no variable is a duplicate
 
 # 5.- creating tidy dataset with averages per group and activity
+library(dplyr)
 tidyData <- extractData %>% 
   group_by(subject,activity) %>%
   summarise_all(funs(mean))
