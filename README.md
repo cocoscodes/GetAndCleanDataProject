@@ -1,7 +1,8 @@
 # GetAndCleanDataProject
 
 ## Raw data
-(samsung smartphones accelerometer data)[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip]
+samsung smartphones accelerometer data
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 ## Files
 run_analysis.R script - reads and tidies the raw data
 
