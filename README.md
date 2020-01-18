@@ -4,7 +4,11 @@
 samsung smartphones accelerometer data
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 ## Files
-run_analysis.R script - reads and tidies the raw data
+run_analysis.R script 
+  - reads the raw data
+  - merges and extracts variables related to mean and SD
+  - renames variables to improve readability
+  - creates a tidy dataset with averages of those variables, grouped by subjects and activities
 
 codebook.txt - explains variables in detail
 
