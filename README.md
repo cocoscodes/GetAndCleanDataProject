@@ -10,6 +10,6 @@ run_analysis.R script
   - renames variables to improve readability
   - creates a tidy dataset with averages of those variables, grouped by subjects and activities
 
-codebook.txt - explains variables in detail
+codebook.md - explains the series of steps the code follows and all the variables in detail
 
 tidyData.txt - final data containing averages for every varible with mean and SD
