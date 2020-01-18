@@ -1,5 +1,5 @@
 CodeBook
-This document describes the series of steps to understand how the run_analysis.R scriptworks.
+This document describes the series of steps to understand how the run_analysis.R script works.
 
 1.- Raw data downloaded and unzipped called "UCI HAR Dataset"
 2.- Assigning the correct directory to the new unzipped file
